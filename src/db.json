@@ -1,0 +1,22 @@
+{
+    "cinemas" :[
+        {
+            "id": 0,
+            "name": "Cines El Centro",
+            "city": "Cádiz",
+            "address": "C/Barrié 9"
+        },
+        {
+            "id": 1,
+            "name": "Cines El CorteInglés",
+            "city": "Puerto Real",
+            "address": "C/SiMouline 19"
+        },
+        {
+            "id": 2,
+            "name": "Cines El Magreo",
+            "city": "San Fernando",
+            "address": "C/General Mente 20"
+        }
+    ]
+}

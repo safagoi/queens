@@ -1,0 +1,22 @@
+.app-navbar{
+    background-color: #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 3.75rem;
+
+    .app-name {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .logo {
+        width: 2rem;
+    }
+
+    .burger {
+        width: 1.5rem;
+    }
+}
+

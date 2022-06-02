@@ -17,7 +17,7 @@ function QueenDetails(){
               setQueen(queen);
               setLoading(false);
           });
-    }, [])
+    }, [id])
 
     if (loading) {
       return <Spinner />
@@ -25,7 +25,7 @@ function QueenDetails(){
 
     return (
       <div className='QueenDetails'>
-        <img width="250" src={queen.image_url} />
+        <img alt='Foto principal de la queen' width="250" src={queen.image_url} />
         <p>{queen.name}</p>
       </div>   
     ); 

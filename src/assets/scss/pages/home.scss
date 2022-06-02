@@ -1,17 +1,23 @@
 .Home {
 
-    .local-cinemas {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem 0;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .queens-list {
         display: flex;
         flex-direction: column;
         gap: .75rem 0;
-        
-
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: .5rem;
-        }
-
-        
+    }
+    
+    .queens-search {
+        display: flex;
+        flex-direction: column;
+        gap: .75rem 0;
     }
 }

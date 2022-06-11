@@ -18,12 +18,12 @@ export function getQueenById(id) {
             .then(data => data)
 }
 
-export function getQueensByName(name) {
+// Servicio falso para mejorar el sistema de busquedas
+export function getQueensByName(queens, name) {
     console.log(`getting queen with name: ${name}`);
 
-    const apiURL = `http://www.nokeynoshade.party/api/queens?name=${name}`;
+    let filteredArray = queens.filter(queen => queen.name.toLowerCase().includes(name.toLowerCase()))
 
-    return fetch(apiURL)
-            .then(res => res.json())
-            .then(data => data)
+    return filteredArray
+
 }

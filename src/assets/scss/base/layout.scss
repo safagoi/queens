@@ -2,30 +2,6 @@
 .App {
   display: flex;
   flex-direction: column;
-  
-  .app-navbar {
-
-    .app-sidebar {
-      display: block;
-      background-color: yellow;
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      overflow-x: hidden;
-      transition: 0.5s;
-
-      &.opened {
-        width: 20rem;
-      }
-    }
-  } 
-
-//   .app-navbar:hover {
-//     width: 0;
-//   }
 
   .app-main {
     width: 80%;

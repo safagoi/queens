@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import Spinner from '../components/Spinner'
-import SearchResults from '../components/SearchResults'
 import {getQueens, getQueensByName} from '../services/getQueens';
 
 function Home() {
@@ -17,16 +16,13 @@ function Home() {
     function handleSearchSubmit(event) {
         event.preventDefault();
 
-        if (keyword != "") {
-            getQueensByName(keyword)
-                .then(results => {
-                    setSearchResults(results);
-                    console.log("Estos son los resultados de la busqueda");
-                    console.log(results);
-                })
+        if (keyword !== "") {
+            let result = getQueensByName(queens, keyword);
+            setSearchResults(result)
+        } else {
+            setSearchResults([])
         }
 
-        setSearchResults([])
     }
 
     // Setea el valor del estado keyword cuando
@@ -53,6 +49,24 @@ function Home() {
 
     return (
         <div className="Home">
+            <div className='queens-search'>
+                <h2>Buscador por nombre</h2>
+                <form id='search-form' onSubmit={handleSearchSubmit}>
+                    <input onChange={handleSearchInputChange} type="text" value={keyword} />
+                    <button type='submit'>Buscar</button>
+                </form>
+                <p>Resultados:</p>
+                {
+                    searchResults.length !== 0 ? searchResults.map(queen => 
+                        <Link key={queen.id} to={`queen/${queen.id}`}>
+                            {queen.name}
+                        </Link>
+                    )
+                    :
+                    "No hay resultados"
+                }
+            </div>
+            
             <div className='queens-list'>
                 <h2>Lista de Queens</h2>
                 {
@@ -64,21 +78,6 @@ function Home() {
                 }
             </div>
 
-            <div className='queens-search'>
-                <h2>Buscador por nombre</h2>
-                <form id='search-form' onSubmit={handleSearchSubmit}>
-                    <input onChange={handleSearchInputChange} type="text" value={keyword} />
-                    <button type='submit'>Buscar</button>
-                </form>
-                <p>Resultados:</p>
-                {
-                    searchResults.map(queen => 
-                        <Link key={queen.id} to={`queen/${queen.id}`}>
-                            {queen.name}
-                        </Link>
-                    )
-                }
-            </div>
         </div>
     ); 
     

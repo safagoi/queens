@@ -50,7 +50,7 @@ function Home() {
     return (
         <div className="Home">
             <div className='queens-search'>
-                <h2>Buscador por nombre</h2>
+                <h2>Buscador por nombre de Queens</h2>
                 <form id='search-form' onSubmit={handleSearchSubmit}>
                     <input onChange={handleSearchInputChange} type="text" value={keyword} />
                     <button type='submit'>Buscar</button>
